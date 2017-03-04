@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fibonacci</title>
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+</head>
+
+<body ng-app="fibonacci.app" ng-controller="main.controller">
+    <div class="row">
+
+        <div class="col-md-12 header">
+            <h1>~ Fibonacci ~</h1>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3 well content">
+            <div class="form-group">
+                <label>Write a number to see Fibonacci Value:</label>
+                <input type="number" class="form-control" placeholder="Between 0-100" ng-model="userInput" ng-change="fib()">
+            </div>
+			<br />
+
+			<h3 class="text-center">Results:</h3>
+			<hr>
+
+			<div class="col-md-12">
+				<table class="table table-bordered" ng-show="userInput != null">
+					<thead>
+						<tr>
+							<th>Value</th>
+							<th>Fibonacci Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="nr in fibList track by $index" ng-class="{match: $index === userInput}">
+							<th scope="row">{{$index}}</th>
+							<td>{{nr}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
