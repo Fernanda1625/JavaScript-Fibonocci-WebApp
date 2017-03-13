@@ -1,6 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var test = "test";
 
 module.exports = {
 	entry: './src/index.js',
